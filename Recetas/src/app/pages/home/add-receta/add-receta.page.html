@@ -1,0 +1,38 @@
+<app-menu-desplegable></app-menu-desplegable>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Título de la Receta</ion-label>
+      <ion-input [(ngModel)]="nuevaReceta.title" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Imagen de la Receta</ion-label>
+      <div *ngIf="mostrarImagen">
+        <ion-img [src]="nuevaReceta.imageUrl"></ion-img>
+      </div>
+    </ion-item>
+    <div class="contenedor-iconos">
+      <ion-icon name="camera-outline" (click)="tomarFoto()"></ion-icon>
+      <ion-icon name="image-outline" (click)="seleccionarFoto()"></ion-icon>
+    </div>
+    <ion-item>
+      <ion-label position="floating">Tiempo de Preparación (minutos)</ion-label>
+      <ion-input type="number" [(ngModel)]="nuevaReceta.cookingTime" required></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-item *ngFor="let ingrediente of ingredients; let i = index">
+        <ion-input [(ngModel)]="ingredients[i]" required placeholder="Ingrediente {{ i + 1 }}"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="full" (click)="agregarIngrediente()">Agregar Ingrediente</ion-button>
+    <ion-list>
+      <ion-item *ngFor="let step of steps; let i = index">
+        <ion-input [(ngModel)]="steps[i]" required placeholder="Paso {{ i + 1}}"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="full" (click)="agregarPaso()">Agregar Paso</ion-button>
+  </ion-list>
+
+  <ion-button expand="block" (click)="agregarReceta()">Agregar Receta</ion-button>
+</ion-content>

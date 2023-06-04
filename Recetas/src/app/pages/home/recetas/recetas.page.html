@@ -1,0 +1,45 @@
+<app-menu-desplegable></app-menu-desplegable>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let receta of recetas" >
+      <ion-card>
+        <img alt="{{receta.title}}" [src]="receta.imageUrl" (click)="verDetallesReceta(receta.id)"/>
+        <ion-card-header>
+          <ion-card-title>{{receta.title}}</ion-card-title>
+          <ion-card-subtitle>Tiempo de preparación: {{receta.cookingTime}} minutos</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button slot="end" [color]="esFavorito(receta) ? 'success' : 'primary'" (click)="toggleFavorito(receta)">
+            <ion-icon name="heart"></ion-icon>
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item *ngFor="let receta of recetasStorage" >
+      <ion-card>
+        <img alt="{{receta.title}}" [src]="receta.imageUrl" (click)="verDetallesReceta(receta.id)"/>
+        <ion-card-header>
+          <ion-card-title>{{receta.title}}</ion-card-title>
+          <ion-card-subtitle>Tiempo de preparación: {{receta.cookingTime}} minutos</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button slot="end" [color]="esFavorito(receta) ? 'success' : 'primary'" (click)="toggleFavorito(receta)">
+            <ion-icon name="heart"></ion-icon>
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item *ngFor="let receta of recetasCrud" >
+      <ion-card>
+        <img alt="{{receta.title}}" [src]="receta.imageUrl" (click)="verDetallesReceta(receta._id)"/>
+        <ion-card-header>
+          <ion-card-title>{{receta.title}}</ion-card-title>
+          <ion-card-subtitle>Tiempo de preparación: {{receta.cookingTime}} minutos</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

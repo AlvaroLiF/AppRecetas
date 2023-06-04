@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="volverAtras()" slot="icon-only"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <h2>Bienvenido</h2>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input type="text" formControlName="usuario"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="pwd"></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" type="submit" [disabled]="loginForm.invalid">Login</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

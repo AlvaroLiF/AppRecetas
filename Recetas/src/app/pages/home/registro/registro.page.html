@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="volverAtras()" slot="icon-only"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input formControlName="usuario" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="pwd" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Edad</ion-label>
+      <ion-input formControlName="edad" type="number"></ion-input>
+    </ion-item>
+    <div class="ion-padding">
+      <ion-button expand="full" type="submit" [disabled]="!registroForm.valid">Registrarse</ion-button>
+    </div>
+  </form>
+</ion-content>

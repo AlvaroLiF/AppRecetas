@@ -1,0 +1,26 @@
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+    color: red;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+h2>span{ 
+    color: yellow;
+    border-radius: 5%;
+    padding: 2px;
+}
+.toolbar{
+    height: 60px;
+}
+.boton-menu{
+    width: 10%;
+}
+.custom-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
